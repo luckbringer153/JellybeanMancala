@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sofia"
+      rel="stylesheet"
+    />
+    <script defer src="./app.js"></script>
+    <link rel="shortcut icon" href="#" />
+    <!--^^^ eliminates 404 error given on Chrome browsers when using audio files-->
+  </head>
+
+  <body>
+    <!--for custom cursor-->
+    <div class="cursorNum"></div>
+
+    <!-- <div id="testClicks">5</div> -->
+    <!--^^^ used for testing-->
+
+    <h1>Jelly Bean Mancala</h1>
+
+    <main class="intro">
+      <section class="textAndButtons">
+        <section class="introBlurb">
+          <p>
+            The Mancala Jelly Beans are on the move! Click the buttons below to
+            play.
+          </p>
+          <p>
+            Player 1's mancala is on the left side and Player 2's is on the
+            right. Likewise, the top row of holes belong to player 1 and the
+            bottom row belongs to player 2. Leave the player 2 box empty for a
+            solo game.
+          </p>
+
+          <!-- volumne slider for game music -->
+          <section class="volumeSec">
+            <p>Volume Control:</p>
+            <input type="range" id="volume-control" />
+          </section>
+        </section>
+
+        <!-- save names as variable so they can be used in turnOrder section -->
+        <input type="text" id="player1" placeholder="Player 1's Name" />
+        <input type="text" id="player2" placeholder="Player 2's Name" />
+        <button id="startGame">Start</button>
+        <button id="reset">Reset</button>
+      </section>
+      <img
+        src="https://media.istockphoto.com/photos/jelly-beans-picture-id182245331?k=20&m=182245331&s=612x612&w=0&h=aJw1X1hZRBxR1uvNOCcllbkULA5cMdvTw6U4argDaE8="
+        class="jellyBeans"
+        height="150px"
+      />
+    </main>
+
+    <!-- Only appears when game begins. Then, insert player 1's name or player 2's name/CPU, starting on random one and alternating with each turn -->
+    <p id="turnOrder"></p>
+    <!-- Only appears when game ends and a winner is decided based on the highest number in P1Hole or P2Hole; inserts the name of player 1 or player 2/CPU -->
+    <p id="winnerMessage"></p>
+    <!-- Only appears when game ends in a tie -->
+    <p id="tieMessage"></p>
+
+    <section id="gameBoardFull">
+      <!--check styling-->
+      <div id="P1Hole">Player 1</div>
+
+      <div class="littleHoles">
+        <div class="P1row">
+          <!--left6-->
+          <div class="hole" id="id1"></div>
+          <div class="hole" id="id2"></div>
+          <div class="hole" id="id3"></div>
+          <div class="hole" id="id7"></div>
+          <div class="hole" id="id8"></div>
+          <div class="hole" id="id9"></div>
+        </div>
+        <div class="P2row">
+          <!--right6-->
+          <div class="hole" id="id4"></div>
+          <div class="hole" id="id5"></div>
+          <div class="hole" id="id6"></div>
+          <div class="hole" id="id10"></div>
+          <div class="hole" id="id11"></div>
+          <div class="hole" id="id12"></div>
+        </div>
+      </div>
+
+      <div id="P2Hole"></div>
+    </section>
+
+    <p class="bottomText">
+      Need to learn the rules? Watch this
+      <a href="https://www.youtube.com/watch?v=-A-djjimCcM" target="_blank"
+        >video</a
+      >
+      by Miss Brain's Cool Math Videos!
+    </p>
+  </body>
+</html>
